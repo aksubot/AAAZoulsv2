@@ -1,0 +1,294 @@
+body{
+    font-family: 'League Spartan', sans-serif;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: antialiased;
+
+    overflow: hidden;
+
+}
+body.no-scroll{
+    overflow: hidden;
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    color: white;
+}
+
+h1{
+    font-family: 'Birthstone Bounce', cursive;
+
+    color: transparent;
+
+    background: url("./kuvat/graffiti-bg-filtered.png");
+    background-size: cover;
+    background-position: center;
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+
+    font-weight: 500;
+
+    filter: brightness(1.2) contrast(1.2);    
+    text-shadow: 0px 0px 20px rgba(255, 208, 54, 0.8);
+}
+
+button{
+    color: black;
+    background: url("./kuvat/graffiti-bg-filtered.png");
+    filter: brightness(1.4) contrast(.8);    
+    background-size: 150%;
+    background-position: center;
+    padding: 10px 0px;
+    border-radius: 40px;
+    border: 1px solid #000;
+    box-shadow: 0px 0px 20px rgba(255, 208, 54, 0.5);
+    font-family: "League Spartan", sans-serif;
+    font-weight:bolder;
+    font-size: 18px;
+
+    z-index: 8;
+
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+p{
+    font-weight: bold;
+    font-size: 24px;
+
+    text-shadow: -1px 1px 10px #000;
+
+    z-index: 10;
+}
+
+
+
+.menuScreen{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .5);
+    width: 100vw;
+    height: 100vh;
+    z-index: 77;
+
+    /* display: none; */
+    user-select: none;
+    pointer-events: none;
+    opacity: 0;
+    transition: all 0.5s ease;
+}
+.menuScreen.active{
+    user-select: all;
+    pointer-events: all;
+    opacity: 1;
+}
+
+/* #region nav */
+
+.navBar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0 50px;
+
+    z-index: 999;
+}
+
+.navCont{
+    width: 100%;
+    height: 100%;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navBar a img{
+    max-height: 100px;
+}
+
+#mallistot{
+    position: absolute;
+    left: 0;
+}
+
+.nav-links li a, #mallistot{
+    text-decoration: none;
+    font-size: 16px;
+
+    text-shadow: 0px 0px 10px #000;
+}
+
+.nav-links li a:hover, #mallistot:hover{
+    text-decoration: underline;
+}
+
+.nav-links{
+    position: absolute;
+    right: 0;
+
+    display: flex;
+    gap: 30px;
+
+    text-decoration: none;
+
+    margin: 0;
+    padding: 0;
+
+    list-style-type: none;
+}
+
+
+.navMenu{
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    right: 20px;
+    flex-direction: column;
+    gap: 6px;
+
+    display: none;
+    cursor: pointer;
+
+    transition: all 0.5s ease;
+
+    padding: 20px;
+}
+
+.navMenu .bar{
+    height: 0;
+    padding-bottom: 2px;
+    width: 24px;
+    background-color: #fff;
+    border-radius: 5px;
+    border: none;
+    padding: none;
+
+    transition: all 0.5s ease;
+}
+
+.hiddenMallistot{
+    display: none;
+}
+
+.navMenu.active .bar:nth-of-type(1){
+    transform: translateY(8px) rotate(45deg);
+}
+.navMenu.active .bar:nth-of-type(2){
+    opacity: 0;
+}
+.navMenu.active .bar:nth-of-type(3){
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+.navMenuSocials{
+    display: none;
+
+    margin: 16px;
+    margin-top: auto;
+}
+
+.navMenuSocials h1{
+    font-size: 96px;
+}
+.navMenuSocials i{
+    font-size: 36px;
+}
+
+.menuScreen{
+    display: none;
+}
+
+@media screen and (max-width: 800px){
+
+    .menuScreen{
+        display: block;
+    }
+
+    .navMenuSocials{
+        display: block;
+    }
+
+    .navMenu{
+        display: flex;
+    }
+
+    #mallistot{
+        display: none;
+    }
+
+    .hiddenMallistot{
+        display: block;
+    }
+
+    .hiddenMallistot:hover{
+        text-decoration: underline;
+    }
+
+    /* To account for nav-links positioning */
+    .navBar{
+        padding: 0;
+    }
+
+    .nav-links{
+        padding-top: 80px;
+        background-color: #000;
+        height: 100vh;
+
+        flex-direction: column;
+
+        width: 70vw;
+
+        top: 0;
+        right: -70vw;
+
+        transition: right 0.5s ease;
+    }
+    @media screen and (max-width: 400px) {
+        .nav-links{
+            width: 80vw;
+            right: -80vw;
+        }
+
+    }
+
+    .nav-links.active{
+        right: 0;
+    }
+
+    .nav-links li{
+        font-size: 16px;
+        width: 100%;
+        height: 42px;
+        margin-left: 16px;
+    }
+
+    .nav-links li a{
+        display: block;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+
+/* #endregion */
+

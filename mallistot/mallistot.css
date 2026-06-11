@@ -1,0 +1,294 @@
+
+/* #region first */
+
+.first{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.firstCont{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    position: relative;
+
+    padding: 10% 0;
+}
+
+.firstCont h1{
+    font-size: 128px;
+
+    text-shadow: 0px 0px 40px rgba(255, 208, 54, 0.8);
+    filter: brightness(1) contrast(1.2);
+
+    z-index: 10;
+
+    padding: 36px;
+}
+
+.first .firstBg{
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.first .firstBg .screen{
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 1) 100%);
+
+    z-index: 5;
+}
+
+.first .firstBg .bgImg{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-image: url("../kuvat/h-co-M3KfixgdCko-unsplash.jpg");
+    background-size: cover;
+    background-position: center;
+
+    z-index: 2;
+}
+
+.firstCont .text{
+
+    margin-top: auto;
+
+    z-index: 20;
+    max-width: 30%;
+    
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+
+    text-align: center;
+}
+
+.firstCont button{
+    margin: auto;
+    padding: 10px 54px;
+}
+
+/* #endregion */
+
+/* #region mallisto */
+.mallistot{
+    width: 100%;
+    height: 130vh;
+
+    background-image: radial-gradient(rgba(0, 0, 0, .8) 0%, rgba(0, 0, 0, 1) 60%, #000 100%);
+
+    position: relative;
+
+    padding-top: 10%;
+}
+
+.mallistotCont{
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+
+    overflow-x: clip;
+
+}
+
+.mallistotCont img{
+    max-height: 50vh;
+    position: absolute;
+    left: 50%;
+    bottom: 16vw;
+    transform: translateX(-50%);
+    transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.mallistoBtns{
+    width: 100%;
+    height: 40px;
+
+    display: flex;
+    justify-content: center;
+
+    position: absolute;
+    bottom: 25%;
+}
+
+.mallistoBtnsCont{
+    display: flex;
+    gap: 20px;
+
+}
+
+.mallistoBtns .mallistoBtn{
+    width: 30px;
+    height: 30px;
+    background-color: #000;
+    border: 2px solid #858585;
+    border-radius: 50px;
+
+    transition: all 0.4s ease;
+    cursor: pointer;
+}
+
+.mallistoBtns .selected {
+    width: 60px;
+}
+
+.mallistot h1{
+    font-size: 96px;
+    text-align: center;
+    position: absolute;
+    top: 10%;
+    width: 100%;
+}
+
+@media screen and (max-width: 1000px) {
+    .mallistotCont img {
+        bottom: 20vw;
+    }
+}
+
+
+@media screen and (max-width: 800px) {
+    .mallistot h1 {
+        font-size: 64px;
+    }
+    .mallistotCont img {
+        bottom: 24vw;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .mallistot h1 {
+        font-size: 48px;
+    }
+
+    .mallistotCont img {
+        bottom: 34vw;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .mallistot h1 {
+        font-size: 42px;
+    }
+    .mallistotCont img {
+        bottom: 38vw;
+    }
+}
+
+
+/* #endregion */
+
+/* #region vaatteet */
+
+.vaatteet h1{
+    text-align: left;
+    width: 100%;
+    margin-left: 5%;
+    font-size: 96px;
+    padding-bottom: 54px;
+}
+
+.vaatteet{
+    width: 100%;
+    background-image: radial-gradient(rgb(0, 0, .7) 0%, rgba(0, 0, 0, 1) 60%, #000 100%);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-direction: column;
+}
+
+.vaatteetCont{
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    /* width: fit-content; */
+    /* position: relative; */
+    width: 95%;
+    margin-bottom: 5%;
+}
+
+.vaate{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 4px;
+
+    background-color: rgba(255, 255, 255, 0.2);
+
+    border-radius: 3vw;
+
+    width: 30vw;
+    height: 40vw;   
+
+}
+
+.vaate img{
+    max-width: 80%;
+    width: auto;
+}
+.vaate h2{
+    font-family: 'Birthstone Bounce', cursive;
+    letter-spacing: 1px;
+    font-size: 32px;
+    font-weight: 500;
+}
+
+.vaate p{
+    text-shadow: none;
+}
+
+@media screen and (max-width: 1100px) {
+    .vaate h2{
+        font-size: 24px;
+    }
+    .vaate p{
+        font-size: 16px;
+    }
+}
+@media screen and (max-width: 650px) {
+    .vaatteetCont{
+        flex-direction: column;
+        margin: 0;
+    }
+    .vaate{
+        width: 100%;
+        height: auto;
+        padding: 14px 0;
+
+        margin-bottom: 14px;
+    }
+    .vaate p{
+        font-size: 24px;
+    }
+}
+
+/* #endregion */
+

@@ -102,3 +102,36 @@ function IncreaseLoader(){
 
   if (h1Value > 100) clearInterval(interval);
 }
+
+
+
+
+
+
+
+
+//lenis
+
+const isMobile = window.matchMedia("(pointer: coarse)").matches || window.innerWidth <= 768
+
+if(isMobile) {
+  const lenis = new Lenis({ 
+  // Nykyiset työpöytäasetuksesi:
+  autoRaf: true, 
+  autoToggle: true, 
+  anchors: true, 
+  allowNestedScroll: true, 
+  naiveDimensions: true, 
+  stopInertiaOnNavigate: true,
+
+  // Uudet lisäykset mobiilin hidastamiseen:
+  touchMultiplier: 0.9, // Mobiilissa vauhti puoliksi (0.5), työpöydällä normaali (1)
+  syncTouch: true                      // Synkronoi kosketusliikkeen tasaisesti
+});
+}
+else{
+  new Lenis({ autoRaf: true, autoToggle: true, 
+        anchors: true, allowNestedScroll: true, naiveDimensions: true, 
+        stopInertiaOnNavigate: true })
+}
+

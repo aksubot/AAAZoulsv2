@@ -468,6 +468,7 @@ html{
     height: 200vh;
 
     position: relative;
+    
 }
 
 .someCont{
@@ -571,6 +572,7 @@ html{
     display: flex;
     justify-content: flex-end;
     flex-direction: column;
+
 }
 
 .footerCont{

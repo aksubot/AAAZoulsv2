@@ -4,13 +4,9 @@ body{
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: antialiased;
 
-    overflow: hidden;
+    overflow-x: hidden;
 
 }
-body.no-scroll{
-    overflow: hidden;
-}
-
 
 *{
     margin: 0;

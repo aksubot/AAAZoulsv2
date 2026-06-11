@@ -298,6 +298,8 @@ html{
 
     position: relative;
 
+    overflow-x: clip;
+
 }
 
 .mallistotCont img{

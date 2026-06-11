@@ -23,7 +23,6 @@ function activateMallisto(index) {
     img.style.transform = `translate(${offset}%) scale(${isActive ? 1.02 : 1})`
   })
 
-  console.log(`Mallisto button ${index + 1} clicked`)
 }
 
 function startAutoAdvance() {
@@ -63,4 +62,43 @@ if (navMenu && navLinks) {
     navScreen.classList.toggle("active")
     
   })
+}
+
+
+const loader = document.querySelector(".loader");
+const loaderH1 = document.querySelector(".loaderH1")
+let loaded = false;
+
+setTimeout(() => {
+  load();
+}, 3000);
+setTimeout(() => {
+  loaderH1.classList.add("loaderH1-hidden")
+}, 2500);
+
+
+
+function load(){
+  if(loaded == true) loader.classList.add("loader-hidden");
+  else load();
+}
+
+window.addEventListener("load", () => {
+    loaded = true;
+    // Lisätään luokka, joka aktivoi CSS-häivytyksen
+});
+
+
+// Loader H1 animation
+
+
+var interval = setInterval(() => IncreaseLoader(), 20);
+
+let h1Value = 0;
+
+function IncreaseLoader(){
+  loaderH1.innerHTML = h1Value + "%";
+  h1Value++;
+
+  if (h1Value > 100) clearInterval(interval);
 }

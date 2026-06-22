@@ -1,0 +1,272 @@
+
+.productPage {
+    width: 100%;
+    margin: 0 auto;
+    padding: 140px 28px 60px;
+    padding: 5% 10%;
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    min-height: 100vh;
+    background: radial-gradient(circle at top, rgba(255, 216, 52, 0.12), transparent 35%),
+                linear-gradient(180deg, rgba(0, 0, 0, 0.9), #050505 95%);
+}
+
+.productHero {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 48px;
+}
+
+
+
+.carousel {
+    position: relative;
+    border-radius: 34px;
+    overflow: hidden;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
+}
+
+.carouselViewport {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    min-height: 420px;
+    background: rgba(10, 10, 10, 0.95);
+}
+
+.carouselTrack {
+    display: flex;
+    transition: transform 0.45s ease;
+    width: 100%;
+}
+
+.carouselSlide {
+    flex: 0 0 100%;
+    display: grid;
+    place-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 18px;
+}
+
+.carouselSlide img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    border-radius: 28px;
+}
+
+.carouselBtn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 52px;
+    height: 52px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.45);
+    color: white;
+    font-size: 1.6rem;
+    cursor: pointer;
+    z-index: 10;
+    transition: background 0.2s ease;
+}
+
+.carouselBtn:hover {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.carouselBtn.prev {
+    left: 18px;
+}
+
+.carouselBtn.next {
+    right: 18px;
+}
+
+.carouselDots {
+    margin-top: 14px;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+.carouselDot {
+    width: 64px;
+    height: 64px;
+    border-radius: 18px;
+    border: 2px solid rgba(255, 255, 255, 0.45);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.carouselDot.active {
+    border-color: #ffd834;
+    transform: scale(1.05);
+}
+
+.carouselDot:hover {
+    transform: scale(1.08);
+}
+
+@media (max-width: 980px) {
+    .carouselSlide {
+        height: 420px;
+    }
+}
+
+@media (max-width: 650px) {
+    .carouselSlide {
+        height: 300px;
+    }
+}
+
+.productDetails {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+.productDetails h1 {
+    font-size: clamp(3rem, 5vw, 4.6rem);
+    line-height: 0.95;
+    margin: 0;
+}
+
+.productPrice {
+    font-size: 2.4rem;
+    color: #ffd834;
+    font-weight: 700;
+}
+
+.productDescription {
+    font-size: 1.05rem;
+    line-height: 1.2;
+    max-width: 700px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.productSpecs {
+    display: grid;
+    gap: 16px;
+}
+
+.productSpecs strong {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 0.95rem;
+    letter-spacing: 0.02em;
+    font-family: "League Spartan", sans-serif;
+    color: rgba(255, 255, 255, 0.82);
+
+}
+
+.productSpecs span {
+    display: block;
+    line-height: 1.2;
+    font-family: "League Spartan", sans-serif;
+}
+
+.purchaseSection {
+    display: grid;
+    gap: 18px;
+}
+
+.selectors {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+label {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: white;
+}
+
+select {
+    appearance: none;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    background: rgba(255, 255, 255, 0.08);
+    color: white;
+    padding: 10px 18px;
+    border-radius: 24px;
+    font-size: 1rem;
+    outline: none;
+}
+
+.cartMessage {
+    color: #c7ff9f;
+    min-height: 1.4rem;
+    font-weight: 600;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+option{
+    background: #303030;
+    color: #fff;
+    font-family: "League Spartan", sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+.cartMessage.visible {
+    opacity: 1;
+}
+
+.productFeatures {
+    padding-top: 8px;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.productFeatures h2 {
+    font-size: 2.1rem;
+    margin-bottom: 22px;
+}
+
+.productFeatures ul {
+    display: grid;
+    gap: 14px;
+    list-style: none;
+    padding-left: 0;
+}
+
+.productFeatures li {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 24px;
+    padding: 20px 24px;
+    line-height: 1.7;
+}
+
+@media (max-width: 980px) {
+    .productHero {
+        grid-template-columns: 1fr;
+    }
+    .selectors {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 650px) {
+    .productPage {
+        padding: 110px 18px 40px;
+    }
+    .productDetails h1 {
+        font-size: 3rem;
+    }
+
+    .productDetails{
+        width: calc(100vw - 110px/2);
+        min-width: 0;
+    }
+}
